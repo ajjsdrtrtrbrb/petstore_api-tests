@@ -1,0 +1,12 @@
+package pac1.Base;
+
+import io.restassured.RestAssured;
+import org.junit.jupiter.api.BeforeAll;
+
+public class BaseClass {
+    @BeforeAll
+    public static void setUp(){
+        RestAssured.baseURI="https://fakerestapi.azurewebsites.net/";
+
+    }
+}

@@ -22,3 +22,14 @@ jobs:
 
       - name: Build and run tests
         run: mvn clean test -B
+      - name: Generate Allure report
+        run: |
+          mvn allure:report
+          mkdir -p allure-results
+          cp -r target/site/allure-maven-plugin/* allure-results/
+
+      - name: Upload Allure report as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: allure-report
+          path: allure-results/

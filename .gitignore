@@ -52,3 +52,11 @@ target/
 .idea/
 target/
 *.iml
+
+*.class
+.idea/
+*.iml
+out/
+target/
+*.log
+*.tmp

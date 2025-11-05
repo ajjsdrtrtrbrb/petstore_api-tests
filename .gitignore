@@ -37,3 +37,18 @@ build/
 
 ### Mac OS ###
 .DS_Store
+# Игнорировать Allure
+.allure/
+
+# Игнорировать IDE
+.idea/
+*.iml
+
+# Игнорировать target
+target/
+
+# Игнорировать Allure и временные файлы
+.allure/
+.idea/
+target/
+*.iml

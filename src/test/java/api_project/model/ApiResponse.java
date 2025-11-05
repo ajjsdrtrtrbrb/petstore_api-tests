@@ -1,7 +1,8 @@
-package pac16.model;
+package api_project.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ApiResponse {
     @JsonProperty("code")
     private int code;
@@ -9,9 +10,14 @@ public class ApiResponse {
     private String type;
     @JsonProperty("message")
     private String message;
+    public ApiResponse(){
 
-    public ApiResponse() {
+    }
 
+    public ApiResponse(int code, String type, String message) {
+        this.code = code;
+        this.type = type;
+        this.message = message;
     }
 
     public int getCode() {
@@ -36,14 +42,5 @@ public class ApiResponse {
 
     public void setMessage(String message) {
         this.message = message;
-    }
-
-    @Override
-    public String toString() {
-        return "ApiResponse{" +
-                "code=" + code +
-                ", type='" + type + '\'' +
-                ", message='" + message + '\'' +
-                '}';
     }
 }
